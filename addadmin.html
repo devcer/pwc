@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PwC</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body style="height: 100%">
+<nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
+  <a class="navbar-brand font-white" href="#">Website name</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="#">Reports</a>
+        <a class="nav-item nav-link font-white" href="#">Admin</a>
+    </ul>
+  </div>
+</nav>
+  <div class="row">
+    <div class="col-3">
+      <div class="div-sidebar">
+        <ul class="ul-sidebar">
+          <li><span class="fa fa-home" aria-hidden="true"></span>  ADMIN HOME</li>
+          <li><span class="fa fa-users" aria-hidden="true"></span>  MANAGE SUB-ADMINS</li>
+          <li><span class="fa fa-plus" aria-hidden="true"></span><span class="fa fa-user" aria-hidden="true"></span> ADD SUB-ADMINS</li>
+          <li><span class="fa fa-users" aria-hidden="true"></span>  USERS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="container">    
+        <div class="row mt-4">
+          <div class="col-md-12">
+          <h1>Add Admin</h1>
+          </div>
+        </div>
+        <div class="row breadcrump mb-2">
+          <div class="col-12">
+            <p>Home > Admins > Add</p>
+          </div>
+        </div>
+        <div class="highlight-div-add-admin">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="mb-0">Contact Details</h2>
+            </div>
+          </div>
+          <hr class="m-1" style="background-color: white;height: 2px;"/>
+          <div class="row">
+            <div class="col-2">
+              <label for="full-name">Name</label>
+            </div>
+            <div class="col-6">
+              <div class="input-group">
+              <input type="text" class="form-control" id="full-name" placeholder="Enter full name" name=""> 
+              </div>  
+            </div>
+            <div class="col-4"></div>
+          </div>
+          <hr class="m-1" style="background-color: white;height: 2px;"/>
+          <div class="row">
+            <div class="col-2">
+              <label for="full-name">Email</label>
+            </div>
+            <div class="col-6">
+              <div class="input-group">
+              <input type="text" class="form-control" id="full-name" placeholder="Type Email here" name=""> 
+              </div>  
+            </div>
+            <div class="col-4"></div>
+          </div>
+          <hr class="m-1" style="background-color: white;height: 2px;"/>
+          <div class="row">
+            <div class="col-2">
+              <label for="full-name">Region</label>
+            </div>
+            <div class="col-6">
+              <div class="input-group">
+              <input type="text" class="form-control" id="full-name" placeholder="Type to pick a Region" name=""> 
+              </div>  
+            </div>    
+            <div class="col-4"></div>
+          </div>
+        </div>
+        <div class="highlight-div-add-admin">
+          <div class="row">
+            <div class="col-12">
+              <h2>Manage Permissions</h2>
+            </div>
+          </div>
+          <hr class="m-1" style="background-color: white;height: 2px;"/>
+          <div class="row">
+            <div class="col-3">
+              <label for="full-name">Allow multiple reports</label>
+            </div>
+            <div class="col-6">
+              <div class="input-group">
+              <label><input type="radio" name=""> Yes</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="radio" name=""> No</label>
+              </div>  
+            </div>
+            <div class="col-3"></div>
+          </div>
+          <hr class="m-1" style="background-color: white;height: 2px;"/>
+          <div class="row">
+            <div class="col-3">
+              <label for="full-name">Allow access to all regions</label>
+            </div>
+            <div class="col-6">
+              <div class="input-group">
+              <label><input type="radio" name=""> Yes</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="radio" name=""> No</label>
+              </div>  
+            </div>
+            <div class="col-3"></div>
+          </div>
+          <hr class="m-1" style="background-color: white;height: 2px;"/>
+          <div class="row">
+            <div class="col-3">
+              <label for="full-name">Allow access to patterns</label>
+            </div>
+            <div class="col-6">
+              <div class="input-group">
+              <label><input type="radio" name=""> Yes</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="radio" name=""> No</label>
+              </div>  
+            </div>
+            <div class="col-3"></div>
+          </div>
+          <hr class="m-1" style="background-color: white;height: 2px;"/>
+          <div class="row">
+            <div class="col-3">
+              <label for="full-name">Select cards to allow</label>
+            </div>
+            <div class="col-6">
+              <div class="input-group">
+              <label><input type="checkbox" name=""> PAN</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name=""> Aadhar</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name=""> Passport</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name=""> Voter ID</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name=""> Licence</label> &nbsp;&nbsp;&nbsp;
+              </div>  
+            </div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <center>
+              <button class="btn btn-default report-btn-color report-btn-size"> Save Admin</button>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "pwc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo --live --verbose --port 3210 --open"
+  },
+  "author": "santosh",
+  "license": "ISC",
+  "dependencies": {
+    "budo": "^10.0.3"
+  }
+}
