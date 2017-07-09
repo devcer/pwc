@@ -16,6 +16,10 @@ app.controller('appController', function($scope, $http) {
     for(var i=0;i<dashboardDataLen;i++){
       $scope.users=$scope.users + response.data[i].aadhars.length;
     }
+    $('#myTable').DataTable({
+      'searching': false,
+      'autoWidth': false
+    });
   }, function errorCallback(response) {
     console.log("Error:"+response)
   });

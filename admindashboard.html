@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 </head>
 <body style="height: 100%" ng-app="appModule" ng-controller="appController">
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
@@ -77,7 +78,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-        <table class="table">
+        <table class="table" id="myTable">
           <thead class="thead-inverse">
             <tr>
               <th></th>
@@ -106,6 +107,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
