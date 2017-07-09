@@ -6,6 +6,19 @@
 	text-align: center;
 	margin-left: 320px;
 }
+input[type=file]{
+	display: none;
+}
+.drop-csv-div{
+  border: 1px dashed #A1ADAD;
+  border-radius: 5px;
+}
+.drop-csv-text{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size: 30px;
+}
 .score-why-select{
 	background-color: #F6F6F6;
 	height: 200px;

@@ -19,3 +19,11 @@ app.directive("generate-report",function(){
     templateUrl:"generatereport.html" 
   };
 });
+
+$("#upload-url").on("click",function(){
+  $("#upload-url-action").get(0).click();
+});
+
+$("#upload-id").on("click",function(){
+  $("#upload-id-action").get(0).click();
+});
