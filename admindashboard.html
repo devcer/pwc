@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
-<body style="height: 100%">
+<body style="height: 100%" ng-app="appModule" ng-controller="appController">
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
   <a class="navbar-brand font-white" href="#">Website name</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -88,9 +88,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
+            <tr ng-repeat="x in dashboardData">
+              <td>{{$index+1}}</td>
+              <td>{{x.url}}</td>
               <td></td>
               <td></td>
               <td></td>
