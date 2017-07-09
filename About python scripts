@@ -1,0 +1,22 @@
+The python scripts require some packages to run. You may not require to run the file.
+All you need to see is the csv output files.
+
+You will get a serires of aadhar card numbers followed by the url.
+
+I have considered one URL result.
+
+For multiple URL's, the result would be the same like:
+
+
+aadhar numbers in 1st row for 1st URL
+URL
+Aadhar numbers in 2nd row for 2nd URL
+2nd URL
+.
+.
+.
+.
+
+
+A graph should be showing the no of aadhars/pan/etc found against the url. When the graph is clicked, it should redirect to the 
+URL.
