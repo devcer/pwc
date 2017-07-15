@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body ng-app="appModule" ng-controller="userSearchCtrl">
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
   <a class="navbar-brand font-white" href="#">Website name</a>
 
@@ -32,8 +32,9 @@
 			<h2>Which website would you like us to check</h2>	
 			<label for="website-url">Example of valid url</label>
 			<div class="input-group input-group-lg">
-			<input type="text" class="form-control" id="website-url" placeholder="http://" name="">
-			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true"></span>
+			<input type="text" class="form-control" id="website-url" placeholder="http://" name="" ng-keyup="websiteUrlKeyup($event)">
+			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableWebsiteUrlWrong"></span>
+			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableWebsiteUrlCorrect"></span>
 			</div>
 			<div class="drop-csv-div mt-2" id="upload-url">
 				<center>
@@ -45,7 +46,8 @@
 				</p>
 				</center>
 			</div>
-			<input type="file" id="upload-url-action">
+			<input type="file" id="upload-url-action" onchange="handleFiles(this.files)">
+			<button type="submit" id="submit-upload-url">Submit</button>
 			<p class="text-danger">Please enter a valid url. eg: http://www.google.com</p>		
 		</div>
 	</div>
@@ -54,8 +56,9 @@
 			<h2>Provide your Unique ID</h2>	
 			<label for="card-number">Please provide only govt issued IDs</label>
 			<div class="input-group input-group-lg">
-			<input type="text" class="form-control" id="card-number" placeholder="Enter card number here" name="">	
-			<span class="fa fa-check correct-color fa-3x" aria-hidden="true"></span>
+			<input type="text" class="form-control" id="card-number" placeholder="Enter card number here" name="" ng-keyup="cardNumberKeyup($event)">	
+			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableCardNumberWrong"></span>
+			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableCardNumberCorrect"></span>
 			</div>
 
 			<div class="drop-csv-div mt-2" id="upload-id">
