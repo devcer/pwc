@@ -61,6 +61,8 @@ include('session.php');
 			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableWebsiteUrlWrong"></span>
 			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableWebsiteUrlCorrect"></span>
 			</div>
+		</div>
+		<div class="col-md-9">
 			<div class="drop-csv-div mt-2" id="upload-url">
 				<center>
 				<p class="drop-csv-text my-2">
