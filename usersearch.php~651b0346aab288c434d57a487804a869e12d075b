@@ -33,16 +33,16 @@ include('session.php');
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
-<body ng-app="appModule" ng-controller="userSearchCtrl">
+<body>
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
-  <a class="navbar-brand font-white" href="https://www.pwc.in/">PwC search engine</a>
+  <a class="navbar-brand font-white" href="https://www.pwc.in/">PwC Search Engine</a>
 
-  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="#">Reports</a>
-        <a class="nav-item nav-link font-white" href="#">Admin</a>
+        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="dashboard.html">Reports</a>
+        <a class="nav-item nav-link font-white" href="AdminLogin.php">Admin</a>
     </ul>
-  </div> -->
+  </div> 
 </nav>
 
 <div class="container">
@@ -57,9 +57,8 @@ include('session.php');
 			<h2>Which website would you like us to check</h2>	
 			<label for="website-url">Example of valid url</label>
 			<div class="input-group input-group-lg">
-			<input type="text" class="form-control" id="website-url" placeholder="http://" name="" ng-keyup="websiteUrlKeyup($event)">
-			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableWebsiteUrlWrong"></span>
-			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableWebsiteUrlCorrect"></span>
+			<input type="text" class="form-control" id="website-url" method="post" placeholder="http://" name="upl" action="upload.php">
+			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true"></span>
 			</div>
 			<div class="drop-csv-div mt-2" id="upload-url">
 				<center>
@@ -71,10 +70,7 @@ include('session.php');
 				</p>
 				</center>
 			</div>
-			<form id="upload" method="post" action="upload.php"  enctype="multipart/form-data">
-							<input type="file" id="upload-url-action" name="upl" onchange="handleFiles(this.files)">
-			<button type="submit" id="submit-upload-url">Submit</button>
-</form>
+			<input type="file" id="upload-url-action" method="post" name="upl" action="upload.php">
 			<p class="text-danger">Please enter a valid url. eg: http://www.google.com</p>		
 		</div>
 	</div>
@@ -83,9 +79,8 @@ include('session.php');
 			<h2>Provide your Unique ID</h2>	
 			<label for="card-number">Please provide only govt issued IDs</label>
 			<div class="input-group input-group-lg">
-			<input type="text" class="form-control" id="card-number" placeholder="Enter card number here" name="" ng-keyup="cardNumberKeyup($event)">	
-			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableCardNumberWrong"></span>
-			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableCardNumberCorrect"></span>
+			<input type="text" class="form-control" id="card-number" method="post" placeholder="Enter card number here" name="upl" action="upload.php">	
+			<span class="fa fa-check correct-color fa-3x" aria-hidden="true"></span>
 			</div>
 
 			<div class="drop-csv-div mt-2" id="upload-id">
@@ -98,7 +93,7 @@ include('session.php');
 				</p>
 				</center>
 			</div>
-			<input type="file" id="upload-id-action">	
+			<input type="file" id="upload-id-action" name="upl" action="upload.php">	
 		</div>
 	</div>
 	<div class="row mb-2">

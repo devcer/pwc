@@ -1,28 +1,3 @@
-<?php
-/*
- * welcome.php
- * 
- * Copyright 2017 raja <raja@raja-Inspiron-N5110>
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
- * MA 02110-1301, USA.
- * 
- * 
- */
-include('session.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +10,7 @@ include('session.php');
 </head>
 <body ng-app="appModule" ng-controller="userSearchCtrl">
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
-  <a class="navbar-brand font-white" href="https://www.pwc.in/">PwC search engine</a>
+  <a class="navbar-brand font-white" href="#">Website name</a>
 
   <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
@@ -71,10 +46,8 @@ include('session.php');
 				</p>
 				</center>
 			</div>
-			<form id="upload" method="post" action="upload.php"  enctype="multipart/form-data">
-							<input type="file" id="upload-url-action" name="upl" onchange="handleFiles(this.files)">
+			<input type="file" id="upload-url-action" onchange="handleFiles(this.files)">
 			<button type="submit" id="submit-upload-url">Submit</button>
-</form>
 			<p class="text-danger">Please enter a valid url. eg: http://www.google.com</p>		
 		</div>
 	</div>
