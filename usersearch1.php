@@ -1,3 +1,28 @@
+<?php
+/*
+ * welcome.php
+ * 
+ * Copyright 2017 raja <raja@raja-Inspiron-N5110>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ */
+include('session.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +35,14 @@
 </head>
 <body>
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
-  <a class="navbar-brand font-white" href="#">Website name</a>
+  <a class="navbar-brand font-white" href="https://www.pwc.in/">PwC Search Engine</a>
 
-  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="#">Reports</a>
-        <a class="nav-item nav-link font-white" href="#">Admin</a>
+        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="dashboard.html">Reports</a>
+        <a class="nav-item nav-link font-white" href="AdminLogin.php">Admin</a>
     </ul>
-  </div> -->
+  </div> 
 </nav>
 
 <div class="container">
@@ -29,13 +54,15 @@
 	<hr>
 	<div class="row highlight-div">
 		<div class="col-md-9">
-			<h2>Which website would you like us to check</h2>	
+			<h2>Please upload a csv file or type a URL to trigger a search</h2>	
 			<label for="website-url">Example of valid url</label>
 			<div class="input-group input-group-lg">
-			<input type="text" class="form-control" id="website-url" placeholder="http://" name="">
+			<input type="text" class="form-control" id="website-url" method="post" placeholder="http://" name="upl" action="upload.php">
 			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true"></span>
 			</div>
+			<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
 			<div class="drop-csv-div mt-2" id="upload-url">
+				<input type="file" name="upl" multiple />
 				<center>
 				<p class="drop-csv-text my-2">
 					<span class="fa-stack">
@@ -45,16 +72,18 @@
 				</p>
 				</center>
 			</div>
-			<input type="file" id="upload-url-action">
+			</form>
 			<p class="text-danger">Please enter a valid url. eg: http://www.google.com</p>		
+			
+		<form action="index.php"> <input type="submit" value="Commit to trigger job" /> </form>
 		</div>
 	</div>
-	<div class="row highlight-div">
+<!--	<div class="row highlight-div">
 		<div class="col-md-9">
 			<h2>Provide your Unique ID</h2>	
 			<label for="card-number">Please provide only govt issued IDs</label>
 			<div class="input-group input-group-lg">
-			<input type="text" class="form-control" id="card-number" placeholder="Enter card number here" name="">	
+			<input type="text" class="form-control" id="card-number" method="post" placeholder="Enter card number here" name="upl" action="upload.php">	
 			<span class="fa fa-check correct-color fa-3x" aria-hidden="true"></span>
 			</div>
 
@@ -68,19 +97,19 @@
 				</p>
 				</center>
 			</div>
-			<input type="file" id="upload-id-action">	
+			<input type="file" id="upload-id-action" name="upl" action="upload.php">	
 		</div>
-	</div>
-	<div class="row mb-2">
+	</div> -->
+<!--	<div class="row mb-2">
 		<div class="col-md-12">
 			<div class="error-full-line"><h1>Please correct the error above and re-submit!<h1></div>
 		</div>
-	</div>
-	<div class="row">
+	</div> -->
+<!--	<div class="row">
 		<div class="col-md-12 text-center">
 			<button class="btn btn-default report-btn-color report-btn-size"><strong>Generate Report</strong></button>
 		</div>
-	</div>
+	</div> -->
 
 </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
