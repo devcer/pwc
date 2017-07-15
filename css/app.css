@@ -9,6 +9,9 @@
 input[type=file]{
 	display: none;
 }
+input[type=file]+button{
+	display: none;
+}
 .drop-csv-div{
   border: 1px dashed #A1ADAD;
   border-radius: 5px;
