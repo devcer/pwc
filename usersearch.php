@@ -44,7 +44,9 @@ include('session.php');
     </ul>
   </div> -->
 </nav>
-
+<div>
+   <h3 align="center" class="userhead">Welcome <?php echo $login_session;?></h3>
+ </div>
 <div class="container">
 	<div class="row mt-4">
 		<div class="col-md-12">
@@ -73,7 +75,7 @@ include('session.php');
 				</p>
 				</center>
 			</div>
-			<form id="upload" method="post" action="upload.php"  enctype="multipart/form-data">
+			<form id="upload" method="post" action="upload.php"  enctype="multipart/form-data" target="_self">
 							<input type="file" id="upload-url-action" name="upl" onchange="handleFiles(this.files)">
 			<button type="submit" id="submit-upload-url">Submit</button>
 </form>
