@@ -25,9 +25,9 @@ include('session.php');
 session_start();
 $user_check = $_SESSION['login_user'];
 $perm_sql = mysqli_query($db,"select * from Users where Username = '$user_check' ");
-$row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-$perm_super_admin = $row['Yes'];
-
+$row = mysqli_fetch_array($perm_sql,MYSQLI_ASSOC);
+$perm_super_admin = $row['Admin'];
+//echo $perm_super_admin;
 function randomPassword() {
     $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
     $pass = array(); //remember to declare $pass as an array
@@ -37,6 +37,19 @@ function randomPassword() {
         $pass[] = $alphabet[$n];
     }
     return implode($pass); //turn the array into a string
+}
+
+function EmailPWD()
+{
+	$to      = $_POST['email'];
+	$subject = 'Change your password';
+	$message = 'hello';
+	$headers = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'Your password is:' .$AddPassword ."\r\n" .
+    'localhost/pwc/changepasswd.php';
+
+mail($to, $subject, $message, $headers);
 }
 
 if ($perm_super_admin=="Yes")
@@ -49,6 +62,7 @@ if ($perm_super_admin=="Yes")
       $AddPassword = randomPassword();
       $AddEmail =  mysqli_real_escape_string($db,$_POST['email']);
       $AddRegion =  mysqli_real_escape_string($db,$_POST['region']);
+      // write code to check if username exists already.
       $add_sql=mqsqli_query($db,"insert into Users(Username,Password,Email,Region) values ('$AddUsername','$AddPassword','$AddEmail,'$AddRegion') ");
       $pre_count= "SELECT * FROM Users";
       $result = mysqli_query($db,$add_sql);
@@ -60,13 +74,22 @@ if ($perm_super_admin=="Yes")
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count > $pre_count) {
-         
-         header("location: addadmin.php");
+         echo '{"status":"success"}';
+		exit;
+        # header("location: usersearch.php"); 
       }else {
          $error = "Failed to add a user";
+         echo '{"status":"Failed to add a user"}';
+		exit;
       }
    }
-		
+   	
+	}
+else
+{
+	echo '{"error":You do not have admin privilages 	}';
+	header("location: access-denied.php");
+	exit();
 	}
 ?>
 <!DOCTYPE html>
@@ -81,11 +104,11 @@ if ($perm_super_admin=="Yes")
 </head>
 <body style="height: 100%">
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
-  <a class="navbar-brand font-white" href="#">Website name</a>
+  <a class="navbar-brand font-white" href="usersearch.php">PwC search engine</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="#">Reports</a>
-        <a class="nav-item nav-link font-white" href="#">Admin</a>
+        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="admindashboard.html">Reports</a>
+        <a class="nav-item nav-link font-white" href="logout.php">Log Out</a>
     </ul>
   </div>
 </nav>
@@ -101,6 +124,7 @@ if ($perm_super_admin=="Yes")
       </div>
     </div>
     <div class="col-9">
+	<form class="modal-content animate" action="" method = "post">
       <div class="container">    
         <div class="row mt-4">
 			<div>
@@ -210,11 +234,11 @@ if ($perm_super_admin=="Yes")
             </div>
             <div class="col-6">
               <div class="input-group">
-              <label><input type="checkbox" name=""> PAN</label> &nbsp;&nbsp;&nbsp;
-              <label><input type="checkbox" name=""> Aadhar</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name="PAN"> PAN</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name="Aadhar"> Aadhar</label> &nbsp;&nbsp;&nbsp;
              <!-- <label><input type="checkbox" name=""> Passport</label> &nbsp;&nbsp;&nbsp;
               <label><input type="checkbox" name=""> Voter ID</label> &nbsp;&nbsp;&nbsp; -->
-              <label><input type="checkbox" name=""> Licence</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name="License"> Licence</label> &nbsp;&nbsp;&nbsp;
               </div>  
             </div>
             <div class="col-3"></div>
@@ -223,11 +247,12 @@ if ($perm_super_admin=="Yes")
         <div class="row">
           <div class="col">
             <center>
-              <button class="btn btn-default report-btn-color report-btn-size"> Save Admin</button>
+              <button class="btn btn-default report-btn-color report-btn-size" type="submit"> Save Admin</button>
             </center>
           </div>
         </div>
       </div>
+      </form>
     </div>
   </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>

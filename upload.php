@@ -14,6 +14,8 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 
 	if(move_uploaded_file($_FILES['upl']['tmp_name'], '/var/www/uploads/'.$_FILES['upl']['name'])){
 		echo '{"status":"success"}';
+		//sleep(3);
+		header("Location: usersearch.php");
 		exit;
 	}
 }

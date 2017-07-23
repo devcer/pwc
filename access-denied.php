@@ -1,3 +1,27 @@
+<?php
+/*
+ * FetchPermission.php
+ * 
+ * Copyright 2017 raja <raja@raja-Inspiron-N5110>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +36,12 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
   <a class="navbar-brand font-white" href="index.html">PwC Search engine</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
         <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="login.php">Login</a>
         <a class="nav-item nav-link font-white" href="SignUp.php">Sign Up</a>
     </ul>
-  </div>
+  </div> -->
 </nav>
 <!-- <div class="div-sidebar">
 	<ul class="ul-sidebar">
@@ -27,7 +51,7 @@
 		<li><span class="fa fa-users" aria-hidden="true"></span>  USERS</li>
 	</ul>
 </div> -->
-
+<p>Access Denied!</p>
 <!-- <div class="container">
 	<div class="row">
 		<div class="col-md-12">

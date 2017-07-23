@@ -1,3 +1,36 @@
+<?php
+/*
+ * welcome.php
+ * 
+ * Copyright 2017 raja <raja@raja-Inspiron-N5110>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ */
+include('session.php');
+//$command = escapeshellcmd('/var/www/html/pwc/pdfScraping.py');
+//$output = shell_exec($command);
+//echo $output;
+	//	Uploaded the csv. 
+		//echo "Today is " . date("Y/m/d") . "<br>";
+		//echo 'Uploaded csv today:       '. date('Y-m-d') ."\n";
+		//echo "The time is " . date("h:i:sa");
+		
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +47,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="login.php">Login</a>
-        <a class="nav-item nav-link font-white" href="SignUp.php">Sign Up</a>
+        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="admindashboard.html">Dashboard/Reports</a>
+        <a class="nav-item nav-link font-white" href="logout.php">logout</a>
     </ul>
-  </div>
+  </div> 
 </nav>
+<center
+<marquee behavior="scroll" bgcolor="yellow" loop="-1" width="30%"><i><font color="blue"><strong>Entry for search is submitted. A notification email will be sent to registered email when the report is ready. Do not schedule a new search until the report is generated. <span id="time"></span></strong>  </font></i></marquee>
+</center>
 <!-- <div class="div-sidebar">
 	<ul class="ul-sidebar">
 		<li><span class="fa fa-home" aria-hidden="true"></span>  ADMIN HOME</li>
@@ -26,16 +62,17 @@
 		<li><span class="fa fa-plus" aria-hidden="true"></span><span class="fa fa-user" aria-hidden="true"></span> ADD SUB-ADMINS</li>
 		<li><span class="fa fa-users" aria-hidden="true"></span>  USERS</li>
 	</ul>
-</div> -->
+</div> 
 
-<!-- <div class="container">
+ <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-		<h1>FIND YOUR ID</h1>
+		
+		
 		</div>
 	</div>
-	<hr>
-	<div class="row highlight-div">
+	<hr>-->
+<!--	<div class="row highlight-div">
 		<div class="col-md-9">
 			<h2>Which website would you like us to check</h2>	
 			<label for="website-url">Example of valid url</label>
@@ -313,6 +350,8 @@
 		</div>
 	</div>
 </div> -->
+<script type="javascript" var today = new Date();
+ document.getElementById('time').innerHTML=today;></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
