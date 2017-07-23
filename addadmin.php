@@ -25,9 +25,15 @@ include('session.php');
 session_start();
 $user_check = $_SESSION['login_user'];
 $perm_sql = mysqli_query($db,"select * from Users where Username = '$user_check' ");
+<<<<<<< HEAD
 $row = mysqli_fetch_array($perm_sql,MYSQLI_ASSOC);
 $perm_super_admin = $row['Admin'];
 //echo $perm_super_admin;
+=======
+$row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+$perm_super_admin = $row['Yes'];
+
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
 function randomPassword() {
     $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
     $pass = array(); //remember to declare $pass as an array
@@ -39,6 +45,7 @@ function randomPassword() {
     return implode($pass); //turn the array into a string
 }
 
+<<<<<<< HEAD
 function EmailPWD()
 {
 	$to      = $_POST['email'];
@@ -52,6 +59,8 @@ function EmailPWD()
 mail($to, $subject, $message, $headers);
 }
 
+=======
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
 if ($perm_super_admin=="Yes")
 	{
 		
@@ -62,7 +71,10 @@ if ($perm_super_admin=="Yes")
       $AddPassword = randomPassword();
       $AddEmail =  mysqli_real_escape_string($db,$_POST['email']);
       $AddRegion =  mysqli_real_escape_string($db,$_POST['region']);
+<<<<<<< HEAD
       // write code to check if username exists already.
+=======
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
       $add_sql=mqsqli_query($db,"insert into Users(Username,Password,Email,Region) values ('$AddUsername','$AddPassword','$AddEmail,'$AddRegion') ");
       $pre_count= "SELECT * FROM Users";
       $result = mysqli_query($db,$add_sql);
@@ -74,6 +86,7 @@ if ($perm_super_admin=="Yes")
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count > $pre_count) {
+<<<<<<< HEAD
          echo '{"status":"success"}';
 		exit;
         # header("location: usersearch.php"); 
@@ -90,6 +103,15 @@ else
 	echo '{"error":You do not have admin privilages 	}';
 	header("location: access-denied.php");
 	exit();
+=======
+         
+         header("location: addadmin.php");
+      }else {
+         $error = "Failed to add a user";
+      }
+   }
+		
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
 	}
 ?>
 <!DOCTYPE html>
@@ -104,11 +126,19 @@ else
 </head>
 <body style="height: 100%">
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
+<<<<<<< HEAD
   <a class="navbar-brand font-white" href="usersearch.php">PwC search engine</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
         <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="admindashboard.html">Reports</a>
         <a class="nav-item nav-link font-white" href="logout.php">Log Out</a>
+=======
+  <a class="navbar-brand font-white" href="#">Website name</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <a class="nav-item nav-link font-white" style="border-right: 1px solid black;" href="#">Reports</a>
+        <a class="nav-item nav-link font-white" href="#">Admin</a>
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
     </ul>
   </div>
 </nav>
@@ -124,7 +154,10 @@ else
       </div>
     </div>
     <div class="col-9">
+<<<<<<< HEAD
 	<form class="modal-content animate" action="" method = "post">
+=======
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
       <div class="container">    
         <div class="row mt-4">
 			<div>
@@ -234,11 +267,19 @@ else
             </div>
             <div class="col-6">
               <div class="input-group">
+<<<<<<< HEAD
               <label><input type="checkbox" name="PAN"> PAN</label> &nbsp;&nbsp;&nbsp;
               <label><input type="checkbox" name="Aadhar"> Aadhar</label> &nbsp;&nbsp;&nbsp;
              <!-- <label><input type="checkbox" name=""> Passport</label> &nbsp;&nbsp;&nbsp;
               <label><input type="checkbox" name=""> Voter ID</label> &nbsp;&nbsp;&nbsp; -->
               <label><input type="checkbox" name="License"> Licence</label> &nbsp;&nbsp;&nbsp;
+=======
+              <label><input type="checkbox" name=""> PAN</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name=""> Aadhar</label> &nbsp;&nbsp;&nbsp;
+             <!-- <label><input type="checkbox" name=""> Passport</label> &nbsp;&nbsp;&nbsp;
+              <label><input type="checkbox" name=""> Voter ID</label> &nbsp;&nbsp;&nbsp; -->
+              <label><input type="checkbox" name=""> Licence</label> &nbsp;&nbsp;&nbsp;
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
               </div>  
             </div>
             <div class="col-3"></div>
@@ -247,12 +288,19 @@ else
         <div class="row">
           <div class="col">
             <center>
+<<<<<<< HEAD
               <button class="btn btn-default report-btn-color report-btn-size" type="submit"> Save Admin</button>
+=======
+              <button class="btn btn-default report-btn-color report-btn-size"> Save Admin</button>
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
             </center>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       </form>
+=======
+>>>>>>> a21f8c08b39df598bbbe78ad719007076b98019b
     </div>
   </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
