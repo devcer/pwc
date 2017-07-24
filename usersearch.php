@@ -59,7 +59,7 @@ include('session.php');
 	</div>
 	<hr>
 	<div class="row highlight-div">
-		<div class="col-md-9">
+		<div class="col-9">
 			<h2>Enter URL of the website to check individual's unique private data</h2>	
 			<label for="website-url">Enter a valid URL</label>
 			<div class="input-group input-group-lg">
@@ -68,12 +68,11 @@ include('session.php');
 			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableWebsiteUrlCorrect"></span>
 					
 			</div>
-			<p class="text-danger">eg: http://www.google.com</p>
+			<p class="text-danger" ng-show="enableWebsiteUrlWrong">eg: http://www.google.com</p>
 		</div>
-		<div class="col-md-9">
+		<div class="col-9">
 			<div class="drop-csv-div mt-2" id="upload-url">
 				<center>
-					<p OR </center></p>
 				<p class="drop-csv-text my-2">
 					<span class="fa-stack">
 					  <i class="fa fa-circle fa-stack-2x"></i>
@@ -83,14 +82,17 @@ include('session.php');
 				</center>
 			</div>
 			<form id="upload" method="post" action="upload.php"  enctype="multipart/form-data" target="_self">
-							<input type="file" id="upload-url-action" name="upl" onchange="handleFiles(this.files)">
+							<input type="file" id="upload-url-action" name="upl">
 			<button type="submit" id="submit-upload-url">Submit</button>
 </form>
 			
 		</div>
+		<div class="col-3 drop-csv-text">
+			<p id="uploaded-url-filename" class="file-upload-message"></p>
+		</div>
 	</div>
 	<div class="row highlight-div">
-		<div class="col-md-9">
+		<div class="col-9">
 			<h2>Provide Unique ID of the individual</h2>	
 			<label for="card-number">Please provide only govt issued IDs(Aadhar,PAN, Driver's License)</label>
 			<div class="input-group input-group-lg">
@@ -98,7 +100,8 @@ include('session.php');
 			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableCardNumberWrong"></span>
 			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableCardNumberCorrect"></span>
 			</div>
-
+		</div>
+		<div class="col-9">
 			<div class="drop-csv-div mt-2" id="upload-id">
 				<center>
 				<p class="drop-csv-text my-2">
@@ -109,7 +112,13 @@ include('session.php');
 				</p>
 				</center>
 			</div>
-			<input type="file" id="upload-id-action">	
+			<form id="upload" method="post" action="upload.php"  enctype="multipart/form-data" target="_self">
+				<input type="file" id="upload-id-action" name="upl">
+			<button type="submit" id="submit-upload-id">Submit</button>
+			</form>
+		</div>
+		<div class="col-3 drop-csv-text">
+			<p id="uploaded-id-filename" class="file-upload-message"></p>
 		</div>
 	</div> 
 <!--	<div class="row mb-2">
@@ -129,6 +138,7 @@ include('session.php');
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

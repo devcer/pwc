@@ -198,11 +198,14 @@ $("#upload-id").on("click",function(){
   $("#upload-id-action").get(0).click();
 });
 
-function handleFiles(files){
-  console.log("file uploaded");
-  $("#submit-upload-url").click();
-}
-
+$("input#upload-url-action").on('change',(e)=>{
+  $("#uploaded-url-filename").html("<strong>File uploaded successfully:</strong><br/>"+e.target.files[0].name);
+  $("#submit-upload-url").click(); 
+});
+$("input#upload-id-action").on('change',(e)=>{
+  $("#uploaded-id-filename").html("<strong>File uploaded successfully:</strong><br/>"+e.target.files[0].name);
+  $("#submit-upload-id").click(); 
+});
 $(document).ready( function () {
     $('#myTable').DataTable({
       'autoWidth': false

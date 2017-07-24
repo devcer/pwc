@@ -15,9 +15,17 @@ input[type=file]{
 input[type=file]+button{
 	display: none;
 }
+.over {
+  border: 2px dashed #000;
+}
 .drop-csv-div{
   border: 1px dashed #A1ADAD;
   border-radius: 5px;
+}
+.file-upload-message{
+	font-size: 18px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .drop-csv-text{
 	display:flex;
