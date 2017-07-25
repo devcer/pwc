@@ -88,7 +88,7 @@ include('session.php');
 			
 		</div>
 		<div class="col-3 drop-csv-text">
-			<p id="uploaded-url-filename" class="file-upload-message"></p>
+			<center><p id="uploaded-url-filename" class="file-upload-message"></p></center>
 		</div>
 	</div>
 	<div class="row highlight-div">
@@ -118,7 +118,7 @@ include('session.php');
 			</form>
 		</div>
 		<div class="col-3 drop-csv-text">
-			<p id="uploaded-id-filename" class="file-upload-message"></p>
+			<center><p id="uploaded-id-filename" class="file-upload-message"></p></center>
 		</div>
 	</div> 
 <!--	<div class="row mb-2">

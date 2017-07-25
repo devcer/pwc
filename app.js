@@ -199,11 +199,11 @@ $("#upload-id").on("click",function(){
 });
 
 $("input#upload-url-action").on('change',(e)=>{
-  $("#uploaded-url-filename").html("<strong>File uploaded successfully:</strong><br/>"+e.target.files[0].name);
+  $("#uploaded-url-filename").html("<span class='fa fa-check correct-color fa-3x' aria-hidden='true'></span><strong>File uploaded successfully:</strong><br/>"+e.target.files[0].name);
   $("#submit-upload-url").click(); 
 });
 $("input#upload-id-action").on('change',(e)=>{
-  $("#uploaded-id-filename").html("<strong>File uploaded successfully:</strong><br/>"+e.target.files[0].name);
+  $("#uploaded-id-filename").html("<span class='fa fa-check correct-color fa-3x' aria-hidden='true'></span><strong>File uploaded successfully:</strong><br/>"+e.target.files[0].name);
   $("#submit-upload-id").click(); 
 });
 $(document).ready( function () {

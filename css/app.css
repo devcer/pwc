@@ -23,7 +23,7 @@ input[type=file]+button{
   border-radius: 5px;
 }
 .file-upload-message{
-	font-size: 18px;
+	font-size: 13px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
