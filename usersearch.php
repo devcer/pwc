@@ -35,7 +35,7 @@ include('session.php');
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 </head>
 <body ng-app="appModule" ng-controller="userSearchCtrl">
 <nav class="navbar navbar-toggleable-md navbar-light bg-nav-color">
@@ -97,8 +97,8 @@ include('session.php');
 			<label for="card-number">Please provide only govt issued IDs(Aadhar,PAN, Driver's License)</label>
 			<div class="input-group input-group-lg">
 			<input type="text" class="form-control" id="card-number" placeholder="Enter card number here" name="" ng-keyup="cardNumberKeyup($event)">	
-			<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableCardNumberWrong"></span>
-			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableCardNumberCorrect"></span>
+	<!--		<span class="fa fa-times wrong-color fa-3x" aria-hidden="true" ng-show="enableCardNumberWrong"></span>
+			<span class="fa fa-check correct-color fa-3x" aria-hidden="true" ng-show="enableCardNumberCorrect"></span> -->
 			</div>
 		</div>
 		<div class="col-9">
@@ -138,7 +138,6 @@ include('session.php');
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="js/usersearch.js"></script>
 </body>
 </html>
